@@ -1,0 +1,178 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de Lectura - Evidencias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario: #0f172a;
+      --color-secundario: #00bcd4;
+      --color-acento: #ff4081;
+      --color-fondo: #f0f4f8;
+      --fuente-principal: 'Montserrat', sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--fuente-principal);
+      background-color: var(--color-fondo);
+      color: #1e293b;
+    }
+    header {
+      background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-bottom: 5px solid var(--color-acento);
+    }
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--color-primario);
+      text-decoration: none;
+      margin: 0 2rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: var(--color-acento);
+      width: 0;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .descripcion {
+      background: white;
+      padding: 2rem;
+      border-left: 6px solid var(--color-secundario);
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .galeria img:hover {
+      transform: scale(1.03);
+    }
+    .actividades ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .actividades li {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border-left: 6px solid var(--color-acento);
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.06);
+    }
+    footer {
+      background-color: var(--color-primario);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    /* Estilos para el nuevo botón */
+    .btn-regresar {
+      display: inline-block;
+      background-color: var(--color-acento);
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .btn-regresar:hover {
+      background-color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Taller de Lectura</h1>
+    <p>Explora nuestras actividades, evidencias y el impacto de la lectura creativa.</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#actividades">Actividades</a>
+    <a href="#galeria">Galería</a>
+  </nav>
+
+  <main>
+    <section id="inicio" class="descripcion">
+      <h2>Bienvenido al Taller de Lectura</h2>
+      <p>Este sitio está dedicado a mostrar el desarrollo del taller de lectura donde fomentamos la comprensión lectora, el pensamiento crítico y la creatividad en los estudiantes. Aquí encontrarás nuestras actividades principales y una galería con evidencias del trabajo realizado.</p>
+    </section>
+
+    <section id="actividades" class="actividades">
+      <h2>Actividades Destacadas</h2>
+      <ul>
+        <li><strong>Círculos de lectura:</strong> debates sobre libros leídos en grupo.</li>
+        <li><strong>Lectura dramatizada:</strong> representaciones escénicas de textos narrativos.</li>
+        <li><strong>Escritura creativa:</strong> creación de cuentos, poemas y ensayos.</li>
+        <li><strong>Club de lectura digital:</strong> participación en foros en línea para comentar lecturas.</li>
+      </ul>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de Evidencias</h2>
+      <div class="galeria">
+         <img src="foto_autora de la autora yo.jpeg" alt=""poemas_pag15">
+        <img src="madar_portada.jpeg" alt="poemas_pag16">
+        <img src="poemas_pag15.jpeg" alt=""poemas_pag15">
+        <img src="poemas_pag16.jpeg" alt="poemas_pag16">
+      </div>
+    </section>
+
+    <!-- Botón nuevo que regresa a la página personal -->
+    <div style="text-align: center;">
+      <a href="index.html"class="btn-regresar">Regresar a Mi pagina personal </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Taller de Lectura. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

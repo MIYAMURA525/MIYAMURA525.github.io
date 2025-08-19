@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil de Miyamura</title>
+
+  <!-- Fuente moderna y Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #dbeafe, #e0f7fa, #fffde7, #e1bee7);
+      background-size: 400% 400%;
+      animation: bgAnimate 10s ease infinite;
+      color: #333;
+    }
+
+    @keyframes bgAnimate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #2c3e50;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: white;
+      background-color: #34495e;
+      padding: 10px 20px;
+      margin: 0 8px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #1abc9c;
+      transform: scale(1.05);
+    }
+
+    .contenido {
+      margin-top: 100px;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .perfil {
+      background-color: white;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .perfil img {
+      position: absolute;
+      top: -60px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 0;
+      border: none;
+      object-fit: cover;
+      background-color: transparent;
+    }
+
+    .perfil h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .perfil p {
+      margin-top: 60px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #1abc9c;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #16a085;
+    }
+
+    #info-contacto {
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    #contacto-texto {
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .perfil img {
+        position: static;
+        margin-top: -40px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a id="btn-correo">Correo</a>
+    <a href="#contacto2">Instagram</a>
+    <a id="btn-whatsapp">WhatsApp</a>
+  </nav>
+
+  <div class="contenido">
+    <div class="perfil">
+      <img src="https://i.pinimg.com/1200x/01/f3/c3/01f3c3fc17b53df1b6df2c813766a8ce.jpg" alt="Imagen de perfil" />
+      <h1>Miyamura</h1>
+      <p>
+        Me gusta el anime, los videojuegos de aventura, acción, carreras de coches, también juegos
+        inspirados en la Segunda Guerra Mundial y me gusta la música de casi todo, menos reguetón.
+      </p>
+      <div class="social-icons">
+        <a href="mailto:rodolfohernandezh5--4@dgb.edu.mx" title="Correo"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5217719453626" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <!-- Contenedor para mostrar datos -->
+      <div id="info-contacto">
+        <p id="contacto-texto"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contenedor = document.getElementById('info-contacto');
+    const textoElemento = document.getElementById('contacto-texto');
+    let contactoActual = "";
+
+    document.getElementById('btn-correo').addEventListener('click', function () {
+      toggleContacto('Correo electrónico: rodolfohernandezh5--4@dgb.edu.mx');
+    });
+
+    document.getElementById('btn-whatsapp').addEventListener('click', function () {
+      toggleContacto('Número de WhatsApp: +52 1 771 945 3626');
+    });
+
+    function toggleContacto(texto) {
+      if (contenedor.style.display === 'block' && contactoActual === texto) {
+        contenedor.style.display = 'none';
+        contactoActual = "";
+      } else {
+        textoElemento.textContent = texto;
+        contenedor.style.display = 'block';
+        contactoActual = texto;
+      }
+    }
+  </script>
+
+</body>
+</html>
